@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {selectedModel} from "./modelReducer";
+import {addAddress as addressBook} from "./addAddressReducer";
 
 export const reducers = combineReducers({
-  selectedModel
+  addressBook
 })

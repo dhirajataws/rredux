@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import {saveContainer as AddAddress} from '../src/containers/saveContainer';
+
 // import './App.css';
-import AddAddress from './components/AddAddress';
 class App extends Component {
   render() {
     return (
-      <div class="container">
+      <div className="container">
         <AddAddress/>
       </div>
     );

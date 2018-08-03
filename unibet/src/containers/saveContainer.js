@@ -5,16 +5,14 @@ import {addAddress} from '../actions/addAddress'
 const mapDispatchToProps = (dispatch) => {
   return {
     addAddress: (address) => {
-      dispatch(selectMake(make));
+      dispatch(addAddress(address));
     }
   }
 }
 
 function mapStateToProps(state, hasProps) {
   return {
-    selectedMake: state.selectedMake.make,
-    selectedModel: state.selectedModel.model,
-    selectedRedirect: state.selectedRedirect.redirect,
+    selectedRedirect: 'dummy',// TODO this needs cleaning
   };
 }
 
