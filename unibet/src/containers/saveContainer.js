@@ -1,11 +1,11 @@
 import AddAddress from '../components/AddAddress';
 import {connect} from 'react-redux';
-import {addAddress} from '../actions/addAddress'
+import {thunkAddAddress} from '../actions/addAddress'
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addAddress: (address) => {
-      dispatch(addAddress(address));
+      dispatch(thunkAddAddress(address));
     }
   }
 }
