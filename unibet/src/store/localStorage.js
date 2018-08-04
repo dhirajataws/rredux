@@ -2,12 +2,12 @@ export const loadState = () => {
   try{
     const serialisedState = localStorage.getItem('state')
     if(serialisedState === null){
-      return undefined
+      return {addressBook: {addressList:[], temp:{}}}
     }
     return JSON.parse(serialisedState);
 
   }catch(err){
-  return undefined
+  return {addressBook: {addressList:[], temp:{}}}
   }
 }
 

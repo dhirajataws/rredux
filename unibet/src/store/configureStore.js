@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import {reducers} from '../reducer'
 import { loadState, saveState } from './localStorage'
 const initialState = loadState();
+console.log(initialState)
 // const initialState = {
 //   addressBook: []
 // }

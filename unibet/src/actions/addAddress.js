@@ -1,7 +1,12 @@
 export const ADD_ADDRESS = 'ADD_ADDRESS';
+export const ADD_TEMP = 'ADD_TEMP';
 
 export const addAddress = (address) => ({
   type: ADD_ADDRESS,
+  payload: address,
+})
+export const addTemp = (address) => ({
+  type: ADD_TEMP,
   payload: address,
 })
 

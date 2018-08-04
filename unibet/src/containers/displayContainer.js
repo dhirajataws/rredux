@@ -1,12 +1,13 @@
 import DisplayAddress from '../components/DisplayAddress';
 import {connect} from 'react-redux';
 // import {thunkAddAddress} from '../actions/addAddress'
-import {addEdit} from "../actions/addEdit";
+// import {addEdit} from "../actions/addEdit";
+import {addTemp} from "../actions/addAddress";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    editSeqNo: (seqNo) => {
-      dispatch((addEdit(seqNo)));
+    addTempAddress: (address) => {
+      dispatch(addTemp(address));
     }
   }
 }
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
 function mapStateToProps(state, hasProps) {
   return {
     // seqNo: state.seqNo,// TODO this needs cleaning
-    addressBook: state.addressBook,
+    addressBook: state.addressBook.addressList,
   };
 }
 

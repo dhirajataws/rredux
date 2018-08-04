@@ -8,7 +8,8 @@ class DisplayAddress extends Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
   handleEdit(e){
-    this.props.editSeqNo(e.target.value);
+    // this.props.addTempAddress(this.props.addressBook[parseInt(e.target.value)-1]);
+    this.props.addTempAddress({firstName:'firsss',lastName:'rrrrrrrr',phoneNo:111111});
   }
   // handleSubmit (e) {
   //   e.preventDefault()
@@ -24,9 +25,9 @@ class DisplayAddress extends Component {
   // }
   render() {
     return (
-        <div class="container">
-              <div class="table-responsive-sm">
-                <table class="table">
+        <div className="container">
+              <div className="table-responsive-sm">
+                <table className="table">
                   <thead>
                   <tr>
                     <th scope="col">#</th>

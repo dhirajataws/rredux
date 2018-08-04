@@ -1,19 +1,23 @@
 import AddAddress from '../components/AddAddress';
 import {connect} from 'react-redux';
-import {thunkAddAddress} from '../actions/addAddress'
+import {thunkAddAddress,addTemp} from '../actions/addAddress'
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addAddress: (address) => {
       dispatch(thunkAddAddress(address));
+    },
+    addTempAddress: (address) => {
+      dispatch(addTemp(address))
     }
   }
 }
 
 function mapStateToProps(state, hasProps) {
   return {
-    seqNo: state.addEdit,
-    addressBook: state.addressBook,
+    // seqNo: state.addEdit,
+    // addressList: state.addressBook.addressList,
+    tempAddress:state.addressBook.temp,
   };
 }
 
