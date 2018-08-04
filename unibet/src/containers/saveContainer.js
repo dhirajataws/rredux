@@ -12,7 +12,8 @@ const mapDispatchToProps = (dispatch) => {
 
 function mapStateToProps(state, hasProps) {
   return {
-    selectedRedirect: 'dummy',// TODO this needs cleaning
+    seqNo: state.addEdit,
+    addressBook: state.addressBook,
   };
 }
 
