@@ -5,12 +5,12 @@ import React, {Component} from 'react';
 class DisplayAddress extends Component {
   constructor(props){
     super(props)
-    this.handleEdit = this.handleEdit.bind(this);
+    // this.handleEdit = this.handleEdit.bind(this);
   }
-  handleEdit(e){
-    // this.props.addTempAddress(this.props.addressBook[parseInt(e.target.value)-1]);
-    this.props.addTempAddress({firstName:'firsss',lastName:'rrrrrrrr',phoneNo:111111});
-  }
+  // handleEdit(e){
+  //    this.props.addTempAddress(this.props.addressList[parseInt(e.target.value)-1]);
+  //   //this.props.addTempAddress({firstName:'firsss',lastName:'rrrrrrrr',phoneNo:111111});
+  // }
   // handleSubmit (e) {
   //   e.preventDefault()
   //   console.log(this.props);
@@ -38,7 +38,7 @@ class DisplayAddress extends Component {
                   </tr>
                   </thead>
                   <tbody>
-                  {this.props.addressBook.map((address, index) => (<Address address={address} handleEdit={this.handleEdit}/>))}
+                  {this.props.addressList.map((address, index) => (<Address address={address} handleEdit={this.props.addTempAddress}/>))}
                   </tbody>
                 </table>
               </div>
@@ -49,16 +49,28 @@ class DisplayAddress extends Component {
 
 export default DisplayAddress;
 
+class Address extends Component {
+  handleClick = () => {
+    this.props.handleEdit({
+        seqNo: this.props.address.seqNo,
+        firstName: this.props.address.firstName,
+        lastName: this.props.address.lastName,
+        phoneNo: this.props.address.phoneNo
+      }
+    );
+  }
 
-const Address = (props) => {
+  render(){
   return (
     <tr>
-      <td>{props.address.seqNo}</td>
-      <td>{props.address.firstName}</td>
-      <td>{props.address.lastName}</td>
-      <td>{props.address.phoneNo}</td>
-      <td><button type="button" value={props.address.seqNo} onClick={props.handleEdit} className="btn btn-info">Edit</button>
+      <td>{this.props.address.seqNo}</td>
+      <td>{this.props.address.firstName}</td>
+      <td>{this.props.address.lastName}</td>
+      <td>{this.props.address.phoneNo}</td>
+
+      <td><button type="button"  onClick={this.handleClick} className="btn btn-info">Edit</button>
       </td>
     </tr>
   )
+}
 }

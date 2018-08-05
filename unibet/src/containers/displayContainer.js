@@ -7,6 +7,8 @@ import {addTemp} from "../actions/addAddress";
 const mapDispatchToProps = (dispatch) => {
   return {
     addTempAddress: (address) => {
+      console.log("add temp")
+      console.log(addTemp(address))
       dispatch(addTemp(address));
     }
   }
@@ -15,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 function mapStateToProps(state, hasProps) {
   return {
     // seqNo: state.seqNo,// TODO this needs cleaning
-    addressBook: state.addressBook.addressList,
+    addressList: state.addressBook.addressList,
   };
 }
 

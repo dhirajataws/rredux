@@ -7,7 +7,7 @@ const reducer =  (accumulator, currentValue) =>{
 export const addAddress = (state = {addressList:[], temp:{}}, action) => {
   switch (action.type) { // we dont need address to be passed
     case ADD_ADDRESS :
-      if(!state.temp.hasOwnProperty('seqNo'))  // differ update vs new. alternatively update handle can be set.
+      if(state.temp && state.temp.seqNo === '')  // differ update vs new. alternatively update handle can be set.
       {
         state.temp.seqNo = state.addressList.reduce(reducer,0) +1
       }
@@ -24,7 +24,8 @@ export const addAddress = (state = {addressList:[], temp:{}}, action) => {
       return ({addressList : newAddressList, temp: {firstName:'',lastName:'',phoneNo:'', seqNo:''}})
 
     case ADD_TEMP :
-      return ({addressList:state.addressList, temp: Object.create(action.payload)
+      console.log(action.payload)
+      return ({addressList:state.addressList, temp: Object.assign({},action.payload)
       })
 
     default :

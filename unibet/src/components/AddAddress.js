@@ -25,6 +25,7 @@ class AddAddress extends Component {
 
   handlePhoneChange(e) {
     this.props.tempAddress.phoneNo = e.target.value
+    console.log("hello"+this.props.tempAddress)
     this.props.addTempAddress(this.props.tempAddress)
   }
   handleSubmit (e) {
