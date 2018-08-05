@@ -1,28 +1,10 @@
 import React, {Component} from 'react';
 
-// import './App.css';
-
 class DisplayAddress extends Component {
   constructor(props){
     super(props)
-    // this.handleEdit = this.handleEdit.bind(this);
   }
-  // handleEdit(e){
-  //    this.props.addTempAddress(this.props.addressList[parseInt(e.target.value)-1]);
-  //   //this.props.addTempAddress({firstName:'firsss',lastName:'rrrrrrrr',phoneNo:111111});
-  // }
-  // handleSubmit (e) {
-  //   e.preventDefault()
-  //   console.log(this.props);
-  //   // this.props.addAddress({})
-  //   this.props.addAddress({firstName:this.fName,lastName:this.lName,phoneNo:this.phone})
-  // }
 
-  // render() {
-  //   return (<div>
-  //     {this.props.addressBook.map((address, index) => (<Address address={address}/>))}
-  //   </div>)
-  // }
   render() {
     return (
         <div className="container">
