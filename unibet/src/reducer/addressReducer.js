@@ -1,4 +1,4 @@
-import {ADD_ADDRESS, ADD_TEMP} from '../actions/address';
+import {ADD_ADDRESS, ADD_TEMP, ADD_ADDRESS_LIST} from '../actions/address';
 
 const reducer =  (accumulator, currentValue) =>{
   return (accumulator > currentValue.seqNo) ? accumulator : currentValue.seqNo; // do we need brackets
@@ -25,6 +25,10 @@ export const phoneBook = (state = {addressList:[], tempAddress:{}}, action) => {
 
     case ADD_TEMP :
       return ({addressList:state.addressList, tempAddress: Object.assign({},action.payload)
+      })
+
+    case ADD_ADDRESS_LIST :
+      return ({addressList:action.payload, tempAddress: state.tempAddress
       })
 
     default :

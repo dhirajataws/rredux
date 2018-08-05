@@ -1,11 +1,14 @@
 import DisplayAddressList from '../components/DisplayAddressList';
 import {connect} from 'react-redux';
-import {thunkAddTempAddress} from "../actions/address";
+import {thunkAddTempAddress, addAddressList} from "../actions/address";
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addTempAddress: (address) => {
       dispatch(thunkAddTempAddress(address));
+    },
+    addAddressList: (addressList) => {
+      dispatch(addAddressList(addressList));
     }
   }
 }

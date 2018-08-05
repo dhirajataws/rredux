@@ -1,5 +1,6 @@
 export const ADD_ADDRESS = 'ADD_ADDRESS';
 export const ADD_TEMP = 'ADD_TEMP';
+export const ADD_ADDRESS_LIST = 'ADD_ADDRESS_LIST';
 
 export const addAddress = (address) => ({
   type: ADD_ADDRESS,
@@ -9,7 +10,10 @@ export const addTempAddress = (address) => ({
   type: ADD_TEMP,
   payload: address,
 })
-
+export const addAddressList = (addressList) => ({
+  type: ADD_ADDRESS_LIST,
+  payload: addressList,
+})
 const saveAddress = async function (address) {
   // trying to mimic rest api call
   return new Promise(function (resolve, reject) {

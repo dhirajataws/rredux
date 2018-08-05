@@ -1,9 +1,20 @@
 import React, {Component} from 'react';
+import fetchAddress from '../helper/fetchAddress';
 
 class DisplayAddressList extends Component {
   constructor(props){
     super(props)
   }
+
+  componentDidMount() {
+    fetchAddress()
+      .then(addressList => {
+        this.props.addAddressList(addressList)
+    }).catch(err => {
+
+    })
+  }
+
   render() {
     return (
         <div className="container">
