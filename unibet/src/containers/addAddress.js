@@ -1,6 +1,6 @@
 import AddAddress from '../components/AddAddress';
 import {connect} from 'react-redux';
-import {thunkAddAddress, thunkAddTempAddress} from '../actions/address'
+import {thunkAddAddress, addTempAddress} from '../actions/address'
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(thunkAddAddress(address));
     },
     addTempAddress: (address) => {
-      dispatch(thunkAddTempAddress(address))
+      dispatch(addTempAddress(address))
     }
   }
 }

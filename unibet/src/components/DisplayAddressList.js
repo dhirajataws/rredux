@@ -2,16 +2,12 @@ import React, {Component} from 'react';
 import fetchAddress from '../helper/fetchAddress';
 
 class DisplayAddressList extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     fetchAddress()
       .then(addressList => {
         this.props.addAddressList(addressList)
       }).catch(err => {
-
+     console.log(err) // error handling required
     })
   }
 
@@ -31,7 +27,7 @@ class DisplayAddressList extends Component {
             </thead>
             <tbody>
             {this.props.addressList.map((address) => (
-              <Address address={address} handleEdit={this.props.addTempAddress}/>))}
+              <Address key={address.seqNo} address={address} handleEdit={this.props.addTempAddress}/>))}
             </tbody>
           </table>
         </div>

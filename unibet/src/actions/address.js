@@ -51,17 +51,6 @@ const saveAddress = async function (address) {
   })
 }
 
-const saveTempAddress = async function (tempAddress) {
-  // trying to mimic rest api call
-  return new Promise(function (resolve, reject) {
-    try { // Assume we make an axios request here
-      localStorage.setItem('tempAddress', JSON.stringify(tempAddress))
-      resolve(tempAddress)
-    } catch (err) {
-      reject(err)
-    }
-  })
-}
 export const thunkAddAddress = function (address) {
   return async function (dispatch) {
     try {
@@ -71,17 +60,6 @@ export const thunkAddAddress = function (address) {
     } catch (err) {
       console.log(err) // cannot load local storage.
       // error handling
-    }
-  };
-}
-export const thunkAddTempAddress = function (tempAddress) {
-  return async function (dispatch) {
-    try {
-      await saveTempAddress(tempAddress)
-      dispatch(addTempAddress(tempAddress))
-    } catch (err) {
-      console.log(err) // cannot load local storage.
-      // error handling needed
     }
   };
 }

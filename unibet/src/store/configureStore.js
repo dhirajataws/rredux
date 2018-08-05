@@ -10,6 +10,6 @@ const initialState = {
 }
 export const store = createStore(reducers, initialState, applyMiddleware(thunk));
 
-store.subscribe(() => {
-  console.log("store change", store.getState())
-})
+// store.subscribe(() => {
+//   console.log("store change", store.getState())
+// })
