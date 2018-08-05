@@ -4,7 +4,7 @@ import {reducers} from '../reducer'
 import { loadState, saveState } from './localStorage'
 // const initialState = loadState();
   const initialState = {
-    addressBook: {addressList:[], temp:{}}
+    addressBook: {addressList:[], temp:{firstName:'',lastName:'',phoneNo:'',seqNo:''}}
   }
 export const store = createStore(reducers, initialState, applyMiddleware(thunk));
 
