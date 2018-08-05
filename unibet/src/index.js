@@ -5,13 +5,10 @@ import App from './App';
 import {Provider} from 'react-redux';
 import {store} from './store/configureStore';
 
-// import registerServiceWorker from './registerServiceWorker';
-
 ReactDOM.render(
   <Provider store={store}>
-      <App/>
+    <App/>
   </Provider>,
   document.getElementById('root')
 )
-// ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
+
