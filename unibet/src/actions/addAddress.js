@@ -31,7 +31,7 @@ export const thunkAddAddress = function (address) {
   return async function (dispatch) {
     try {
       await saveState(address)
-      dispatch(addAddress())
+      dispatch(addAddress()) // Not passing address further. It is available in temp
     } catch (err) {
       console.log(err)
       // error handling

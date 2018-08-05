@@ -15,7 +15,6 @@ class AddAddress extends Component {
   }
 
   handlefNameChange(e) {
-    console.log(e.target.value)
     this.props.tempAddress.firstName = e.target.value
     this.props.addTempAddress(this.props.tempAddress)
   }
@@ -51,14 +50,14 @@ class AddAddress extends Component {
             <div className="col-sm">
               <div className="form-group">
                 <label>Last Name</label>
-                <input type="text" className="form-control" id="lastName" content={this.props.tempAddress.lastName} onChange={this.handleLNameChange}
+                <input type="text" className="form-control" id="lastName" value={this.props.tempAddress.lastName} onChange={this.handleLNameChange}
                        />
               </div>
             </div>
             <div className="col-sm">
               <div className="form-group">
                 <label>Phone No.</label>
-                <input type="text" className="form-control" id="phoneNo"  content={this.props.tempAddress.phoneNo} onChange={this.handlePhoneChange}
+                <input type="text" className="form-control" id="phoneNo"  value={this.props.tempAddress.phoneNo} onChange={this.handlePhoneChange}
                        />
               </div>
             </div>
