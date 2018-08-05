@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import {saveContainer as AddAddress} from '../src/containers/saveContainer';
-import {displayContainer as DisplayAddress} from "./containers/displayContainer";
-// import './App.css';
+import {AddContainer} from '../src/containers/addAddress';
+import {DisplayContainer} from "./containers/displayAddressList";
 class App extends Component {
 
   render() {
     return (
       <div className="container">
-        <AddAddress/>
-        <DisplayAddress/>
+        <AddContainer/>
+        <DisplayContainer/>
       </div>
     );
   }

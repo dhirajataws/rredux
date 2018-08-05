@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 
-class DisplayAddress extends Component {
+class DisplayAddressList extends Component {
   constructor(props){
     super(props)
   }
-
   render() {
     return (
         <div className="container">
@@ -29,7 +28,6 @@ class DisplayAddress extends Component {
   }
 }
 
-export default DisplayAddress;
 
 class Address extends Component {
   handleClick = () => {
@@ -49,10 +47,11 @@ class Address extends Component {
       <td>{this.props.address.firstName}</td>
       <td>{this.props.address.lastName}</td>
       <td>{this.props.address.phoneNo}</td>
-
       <td><button type="button"  onClick={this.handleClick} className="btn btn-info">Edit</button>
       </td>
     </tr>
   )
 }
 }
+
+export default DisplayAddressList;

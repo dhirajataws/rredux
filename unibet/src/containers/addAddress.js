@@ -1,6 +1,6 @@
 import AddAddress from '../components/AddAddress';
 import {connect} from 'react-redux';
-import {thunkAddAddress,addTemp} from '../actions/addAddress'
+import {thunkAddAddress, thunkAddTempAddress} from '../actions/address'
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -8,15 +8,15 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(thunkAddAddress(address));
     },
     addTempAddress: (address) => {
-      dispatch(addTemp(address))
+      dispatch(thunkAddTempAddress(address))
     }
   }
 }
 
 function mapStateToProps(state) {
   return {
-    tempAddress:state.addressBook.temp,
+    tempAddress: state.phoneBook.tempAddress,
   };
 }
 
-export const saveContainer = connect(mapStateToProps, mapDispatchToProps)(AddAddress);
+export const AddContainer = connect(mapStateToProps, mapDispatchToProps)(AddAddress);

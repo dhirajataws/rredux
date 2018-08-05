@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {addAddress as addressBook} from "./addAddressReducer";
+import {phoneBook} from "./addressReducer";
 
 export const reducers = combineReducers({
-  addressBook
+  phoneBook
 })
