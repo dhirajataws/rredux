@@ -3,30 +3,30 @@ import React, {Component} from 'react';
 class AddAddress extends Component {
   constructor(props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
-    this.checkDisabled = this.checkDisabled.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleCancel = this.handleCancel.bind(this);
+    // this.checkDisabled = this.checkDisabled.bind(this);
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.props.tempAddress[e.target.name] = e.target.value
     this.props.addTempAddress(this.props.tempAddress)
     e.preventDefault()
   }
 
-  checkDisabled() {
+  checkDisabled = () => {
     return this.props.tempAddress.firstName === '' &&
       this.props.tempAddress.lastName === '' &&
       this.props.tempAddress.phoneNo === ''
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     this.props.addAddress(this.props.tempAddress) // tempAddress for mocking axios style data insert.reducer not needed
     e.preventDefault()
   }
 
-  handleCancel(e) {
+  handleCancel = (e) => {
     this.props.addTempAddress({firstName: '', lastName: '', phoneNo: '', seqNo: ''})
     e.preventDefault()
   }
@@ -61,8 +61,9 @@ class AddAddress extends Component {
             </div>
           </div>
           <div className="d-flex justify-content-end my-4">
-            <input className="btn btn-primary btn-md ml-2" disabled={this.checkDisabled()} type="submit" value="Save"/>
-            <input className="btn btn-primary btn-md ml-2" disabled={this.checkDisabled()} type="button" onClick={this.handleCancel} value="Cancel"/>
+            <input className="btn btn-primary btn-md" disabled={this.checkDisabled()} type="submit" value="Save"/>
+            <input className="btn btn-primary btn-md ml-2" disabled={this.checkDisabled()} type="button"
+                   onClick={this.handleCancel} value="Cancel"/>
           </div>
         </form>
       </div>

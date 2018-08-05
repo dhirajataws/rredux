@@ -2,11 +2,6 @@ export const ADD_ADDRESS = 'ADD_ADDRESS';
 export const ADD_TEMP = 'ADD_TEMP';
 export const ADD_ADDRESS_LIST = 'ADD_ADDRESS_LIST';
 
-// export const addAddress = (address) => ({
-//   type: ADD_ADDRESS,
-//   payload: address,
-// })
-
 export const addTempAddress = (address) => ({
   type: ADD_TEMP,
   payload: address,
@@ -36,7 +31,6 @@ const saveAddress = async function (address) {
         {
           address.seqNo = serialisedAddressList.reduce(reducer, 0) + 1
         }
-        //address.seqNo !== '' &&
         let found = false
         serialisedAddressList = serialisedAddressList.map((item) => {
           if (item.seqNo === address.seqNo) {
@@ -50,7 +44,7 @@ const saveAddress = async function (address) {
         serialisedAddressList = found ? serialisedAddressList : serialisedAddressList.concat(address) // address list is already new. mutable ok.
         localStorage.setItem('addressList', JSON.stringify(serialisedAddressList))
       }
-      resolve(serialisedAddressList) // Do we need a 'success'.
+      resolve(serialisedAddressList)
     } catch (err) {
       reject(err)
     }
