@@ -7,7 +7,7 @@ class DisplayAddressList extends Component {
       .then(addressList => {
         this.props.addAddressList(addressList)
       }).catch(err => {
-     console.log(err) // error handling required
+      // console.log(err) // error handling required for testing. isPlatormBrowser can be added.
     })
   }
 

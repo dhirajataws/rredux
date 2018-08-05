@@ -21,9 +21,9 @@ const saveAddress = async function (address) {
     try { // Assume we make an axios request here
       let serialisedAddressList = localStorage.getItem('addressList')
       if (serialisedAddressList === null) {
-        localStorage.setItem('addressList', JSON.stringify([Object.assign(address,{seqNo:1})])) // add sequence no.
+        localStorage.setItem('addressList', JSON.stringify([Object.assign(address, {seqNo: 1})])) // add sequence no.
         JSON.parse(localStorage.getItem('addressList'))
-        resolve (JSON.parse(localStorage.getItem('addressList'))) //
+        resolve(JSON.parse(localStorage.getItem('addressList'))) //
       } else {
         serialisedAddressList = JSON.parse(serialisedAddressList)
 
