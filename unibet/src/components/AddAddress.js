@@ -1,41 +1,24 @@
 import React, {Component} from 'react';
-// import './App.css';
 
 class AddAddress extends Component {
   constructor(props){
     super(props)
-
-    this.handlefNameChange= this.handlefNameChange.bind(this); // do we requrie these binds
-    this.handleLNameChange= this.handleLNameChange.bind(this);
-    this.handlePhoneChange= this.handlePhoneChange.bind(this);
+    this.handleChange= this.handleChange.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);
-    this.handleCancel= this.handleSubmit.bind(this);
-
-    // this.clear()
+    this.handleCancel= this.handleCancel.bind(this);
   }
 
-  handlefNameChange(e) {
-    this.props.tempAddress.firstName = e.target.value
-    this.props.addTempAddress(this.props.tempAddress)
-  }
-  handleLNameChange(e) {
-    this.props.tempAddress.lastName = e.target.value
-    this.props.addTempAddress(this.props.tempAddress)
-  }
-
-  handlePhoneChange(e) {
-    this.props.tempAddress.phoneNo = e.target.value
-    console.log("hello"+this.props.tempAddress)
+  handleChange(e) {
+    this.props.tempAddress[e.target.name] = e.target.value
     this.props.addTempAddress(this.props.tempAddress)
   }
   handleSubmit (e) {
-    // this.props.addAddress({firstName:'',lastName:'',phoneNo:''})
     this.props.addAddress(this.props.tempAddress) // tempAddress for mocking axios style data insert.reducer not needed
     e.preventDefault()
-
-    // this.clear();
   }
   handleCancel (e) {
+    this.props.addTempAddress({firstName:'',lastName:'',phoneNo:'',seqNo:''})
+    e.preventDefault()
   }
   render() {
     return (
@@ -45,20 +28,20 @@ class AddAddress extends Component {
             <div className="col-sm">
               <div className="form-group">
                 <label>First Name</label>
-                <input type="text"  className="form-control" id="firstName" value={this.props.tempAddress.firstName} onChange={this.handlefNameChange} />
+                <input type="text"  className="form-control" name="firstName" id="firstName" value={this.props.tempAddress.firstName} onChange={this.handleChange} />
               </div>
             </div>
             <div className="col-sm">
               <div className="form-group">
                 <label>Last Name</label>
-                <input type="text" className="form-control" id="lastName" value={this.props.tempAddress.lastName} onChange={this.handleLNameChange}
+                <input type="text" className="form-control" name="lastName" id="lastName" value={this.props.tempAddress.lastName} onChange={this.handleChange}
                        />
               </div>
             </div>
             <div className="col-sm">
               <div className="form-group">
                 <label>Phone No.</label>
-                <input type="text" className="form-control" id="phoneNo"  value={this.props.tempAddress.phoneNo} onChange={this.handlePhoneChange}
+                <input type="text" className="form-control" id="phoneNo"  name="phoneNo" value={this.props.tempAddress.phoneNo} onChange={this.handleChange}
                        />
               </div>
             </div>
