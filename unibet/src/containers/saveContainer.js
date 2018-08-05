@@ -13,10 +13,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-function mapStateToProps(state, hasProps) {
+function mapStateToProps(state) {
   return {
-    // seqNo: state.addEdit,
-    // addressList: state.addressBook.addressList,
     tempAddress:state.addressBook.temp,
   };
 }

@@ -2,11 +2,10 @@ import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import {reducers} from '../reducer'
 import { loadState, saveState } from './localStorage'
-const initialState = loadState();
-console.log(initialState)
-// const initialState = {
-//   addressBook: []
-// }
+// const initialState = loadState();
+  const initialState = {
+    addressBook: {addressList:[], temp:{}}
+  }
 export const store = createStore(reducers, initialState, applyMiddleware(thunk));
 
 store.subscribe(() => {

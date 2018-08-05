@@ -13,7 +13,7 @@ export const addTemp = (address) => ({
 export const saveState = async function (address) {
   // trying to mimic rest api call
   return new Promise(function (resolve, reject) {
-    try {
+    try { // Assume we make an axios request here
       let serialisedState = localStorage.getItem('addressBook')
       if (serialisedState === null) {
         localStorage.setItem('addressBook', JSON.stringify([address]))
@@ -31,7 +31,7 @@ export const thunkAddAddress = function (address) {
   return async function (dispatch) {
     try {
       await saveState(address)
-      dispatch(addAddress(address))
+      dispatch(addAddress())
     } catch (err) {
       console.log(err)
       // error handling

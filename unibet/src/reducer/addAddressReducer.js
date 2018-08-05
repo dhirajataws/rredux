@@ -23,7 +23,7 @@ export const addAddress = (state = {addressList:[], temp:{}}, action) => {
 
       newAddressList = found ? newAddressList : newAddressList.concat(state.temp) // address list is already new. mutable ok.
 
-      return ({addressList : newAddressList, temp:{}})
+      return ({addressList : newAddressList, temp: {firstName:'',lastName:'',phoneNo:'', seqNo:''}})
       // return ({addressList :[...state.addressList, {
       //   firstName:action.payload.firstName,
       //   lastName:action.payload.lastName,
@@ -33,7 +33,10 @@ export const addAddress = (state = {addressList:[], temp:{}}, action) => {
 
 
     case ADD_TEMP :
-      return ({addressList:state.addressList, temp: action.payload})// can we use assign
+      // console.log(action.payload)
+      return ({addressList:state.addressList, temp: Object.create(action.payload)
+        // {firstName:action.payload.firstName,lastName:action.payload.lastName,phoneNo:action.payload.phoneNo, seqNo:action.payload.seqNo}
+      })
 
     default :
       return state;
