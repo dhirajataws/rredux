@@ -19,4 +19,4 @@ function mapStateToProps(state) {
   };
 }
 
-export const DisplayContainer = connect(mapStateToProps,mapDispatchToProps)(DisplayAddressList);
+export const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(DisplayAddressList);

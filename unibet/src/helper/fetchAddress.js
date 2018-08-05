@@ -5,7 +5,7 @@ const fetchAddress = async function () {
       let serialisedState = localStorage.getItem('addressList')
       if (serialisedState === null) {
         serialisedState = []
-      } else{
+      } else {
         serialisedState = JSON.parse(serialisedState)
       }
       resolve(serialisedState) // Do we need a 'success'.

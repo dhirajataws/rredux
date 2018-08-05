@@ -62,7 +62,7 @@ class AddAddress extends Component {
           </div>
           <div className="d-flex justify-content-end my-4">
             <input className="btn btn-primary btn-md ml-2" disabled={this.checkDisabled()} type="submit" value="Save"/>
-            <input className="btn btn-primary btn-md ml-2" type="button" onClick={this.handleCancel} value="Cancel"/>
+            <input className="btn btn-primary btn-md ml-2" disabled={this.checkDisabled()} type="button" onClick={this.handleCancel} value="Cancel"/>
           </div>
         </form>
       </div>
